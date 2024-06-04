@@ -1,7 +1,7 @@
-let navBtn = document.querySelector('#nav-btn');
+let navBtn = document.querySelector('#nav-btn-mobile');
 let navBar = document.querySelector('nav')
 
-
+// nav animation mobile
 navBtn.addEventListener('click', dropNav)
 function dropNav(){
     if(navBar.classList.contains('show-nav')){
@@ -15,9 +15,8 @@ function dropNav(){
     }
 }
 
-
+// back top top button mobile
 if (window.matchMedia('(max-width: 600px)').matches) {
-
     let backTopBtn = document.querySelector('#btn-backtop')
 
     backTopBtn.addEventListener('click', backTop)
@@ -27,13 +26,12 @@ if (window.matchMedia('(max-width: 600px)').matches) {
             behavior: "smooth"
         })
     }
-
     window.addEventListener('scroll', showScroll)
     function showScroll(){
         if(window.scrollY > 20){
-            backTopBtn.classList.remove('hidden')
+            backTopBtn.style.display = 'block'
         } else{
-            backTopBtn.classList.add('hidden')
+            backTopBtn.style.display = 'none'
         }
     }
 }

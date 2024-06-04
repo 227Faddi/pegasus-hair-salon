@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Pacifico&display=swap');
 
 /* Box Model Hack */
 * {
@@ -24,22 +23,24 @@ body{
   min-height: 100%;
   font-family: "EB Garamond", serif;
 }
-
-.hidden{
-  display: none;
-}
 /******************************************
-/* BASE STYLES
+/* GENERAL STYLES
 /*******************************************/
 a {
   text-decoration: none;
-  color: black;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
 }
 
 h1,
 h2,
 h3,
-span {
+span,
+.main-section,
+.stylers-section,
+.promo-section,
+header{
   text-transform: uppercase;
 }
 
@@ -61,8 +62,20 @@ img {
   font-weight: lighter;
   text-transform: uppercase;
 }
+
+.no-wrap{
+  text-wrap: nowrap;
+}
+
+.tablet-item{
+  display: none;
+}
+
+.desktop-item{
+  display: none;
+}
 /******************************************
-/* LAYOUT
+/* HEADER
 /*******************************************/
 header{
   position: fixed;
@@ -73,20 +86,19 @@ header{
   color: white;
   min-height: 75px;
   padding: 1.5em;
-  text-transform: uppercase;
 }
 
-header > div{
+.logo{
+  font-style: italic;
+}
+
+.header-mobile{
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo{
-  font-style: oblique;
-}
-
-#nav-btn{
+#nav-btn-mobile{
   color: white;
   background-color: transparent;
   border: none;
@@ -100,196 +112,7 @@ nav ul{
   gap: 2.5em;
 }
 
-header a{
-  color: white;
-}
-
-.nav-links{
-  cursor: pointer;
-}
-
-main{
-  padding: 75px 0;
-}
-
-main > section{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-main > section{
-  padding: 1.5em;
-}
-
-.main-section{
-  background-image: url(/assets/img/main.jpg);
-  background-size: cover;
-  background-position: center;
-  min-height: 400px;
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding-block: 4rem;
-}
-
-.main-section h1{
-  color: white;
-  line-height: 1.2em;
-  font-size: 2.5rem;
-  margin: 0;
-}
-
-.no-wrap{
-  text-wrap: nowrap;
-}
-
-.main-slogan{
-  color: white;
-  margin-block: 2em;
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-}
-
-.services{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1em;
-  margin-top: 2em;
-  text-align: center;
-}
-.services h3{
-  font-weight: bold;
-}
-
-.info-section{
-  padding-block: 3em;
-  gap: 3em;
-  background-color: #f3f4f6;
-}
-
-.info-section-text > *{
-  margin-bottom: 3rem;
-}
-
-.info-section-text h2{
-  font-size: 2.5rem;
-}
-
-.info-section p{
-  color: #737373;
-}
-
-.stylers-section{
-  text-align: center;
-  gap: 2em;
-  padding: 1e;
-}
-
-.styler > *{
-  margin-bottom: 1em
-}
-
-.promo-section{
-  background-color: #f3f4f6;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-block: 4rem;
-}
-
-.promo-section p{
-  font-size: 3.5rem;
-  padding-block: 0.5rem;
-}
-
-.lookbook{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1em;
-}
-
-.lookbook-col{
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
-
-
-.lookbook img{
-  width: 100%;
-}
-
-footer{
-  background-color: black;
-  color: white;
-  padding: 2em 1.5em;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5em;
-}
-
-footer p{
-  text-align: center;
-  line-height: 1.5em;
-}
-
-.footer-links{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5em;
-}
-
-footer a{
-  color: white;
-  margin-left: em;
-}  
-
-#btn-backtop{
-  border-radius: 100%;
-  border: 3px solid white;
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-}
-
-.desktop-item{
-  display: none;
-}
-
-.main-section-promo{
-  margin-top: 3em;
-  padding: 2.5em 2em;
-  background-color: black;
-  color: white;
-  max-width: 300px;
-}
-
-.main-section-promo h3{
-  font-size: 1.3rem;
-  font-weight: normal;
-  margin-bottom: 1em
-}
-
-.main-section-promo p{
-  font-size: 1.3rem;
-  line-height: 2em;
-  margin-bottom: 1em
-}
-
-.main-section-promo a{
-
-  padding: 1em;
-  background-color: white;
-  color: black;
-  font-weight: lighter;
-  text-transform: uppercase;
-}
-
-.hidden-nav{
+.nav-mobile{
   height: 0;
   animation-duration: 1s;
   animation-fill-mode: forwards;
@@ -321,35 +144,215 @@ footer a{
   }
 }
 
-.tablet-item{
-  display: none;
+/******************************************
+/* MAIN
+/*******************************************/
+main{
+  padding: 75px 0;
 }
 
+main > section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5em;
+}
+
+.main-section{
+  background-image: url(/assets/img/main.webp);
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-block: 4rem;
+  color: #fff;
+}
+
+.main-section h1{
+  line-height: 1.2em;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.main-slogan{
+  margin-block: 2em;
+  letter-spacing: 0.3em;
+}
+
+/* descktop only */
+.main-section-promo{
+  margin-top: 3em;
+  padding: 2.5em 2em;
+  background-color: black;
+  color: white;
+  max-width: 300px;
+  font-size: 1.3rem;
+}
+
+.main-section-promo p{
+  line-height: 2em;
+  margin: 1em 0;
+}
+
+.main-section-promo .btn-primary{
+  background-color: white;
+  color: #000;
+}
+/******************************************
+/* SERVICES
+/*******************************************/
+.services-section{
+  display: flex;
+  gap: 3em;
+}
+
+.service{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 2em;
+  text-align: center;
+}
+
+.service p{
+  color:  #737373;
+}
+/******************************************
+/* INFO
+/*******************************************/
+.info-section{
+  padding-block: 3em;
+  gap: 3em;
+  background-color: #f3f4f6;
+}
+
+.info-section-text > *{
+  margin-bottom: 3rem;
+}
+
+.info-section-text h2{
+  font-size: 2.5rem;
+}
+
+.info-section p{
+  color: #737373;
+}
+/******************************************
+/* STYLER
+/*******************************************/
+.stylers-section{
+  text-align: center;
+  gap: 2em;
+  padding: 1e;
+}
+
+.styler > *{
+  margin-bottom: 1em
+}
+/******************************************
+/* PROMO
+/*******************************************/
+.promo-section{
+  background-color: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-block: 4rem;
+}
+
+.promo-section p{
+  font-size: 3.5rem;
+  padding-block: 0.5rem;
+}
+
+/******************************************
+/* LOOKBOOK
+/*******************************************/
+.lookbook{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.lookbook-col{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/******************************************
+/* FOOTER
+/*******************************************/
+footer{
+  background-color: black;
+  color: white;
+  padding: 2em 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+}
+
+footer p{
+  text-align: center;
+  line-height: 1.5em;
+}
+
+.footer-links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+}
+
+/******************************************
+/* BACK TO TOP BUTTON
+/*******************************************/
+#btn-backtop{
+  display: none;
+  border-radius: 100%;
+  border: 3px solid white;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+/******************************************
+/* TABLETS MEDIA QUERIES
+/*******************************************/
 @media only screen and (min-width: 600px){
-  header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .tablet-item{
+    display: block;
   }
 
-  .hidden-nav{
+  header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  nav ul,
+  .services-section,
+  .lookbook{
+    flex-direction: row;
+  }
+
+  .nav-mobile{
     height: 100%;
     display: block;
     overflow: visible;
   }
 
-  #nav-btn{
+  #nav-btn-mobile{
     display: none;
   }
 
   nav ul{
-    flex-direction: row;
     padding: 0;
     gap: 0.5em;
-  }
-
-  .nav-links{
-    padding: 0;
   }
 
   main > section{
@@ -360,45 +363,22 @@ footer a{
     width: 50%;
   }
 
-  .services-section{
-    flex-direction: row;
-    gap: 3em;
-  }
-
-  .lookbook{
-    flex-direction: row;
-  }
-
   .stylers{
     display: flex;
     gap: 1em;
   }
-
-  .tablet-item{
-    display: block;
-  }
-  
-
 }
 
+/******************************************
+/* LAPTOP MEDIA QUERIES
+/*******************************************/
 @media only screen and (min-width: 992px) {
-
-  header{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-
   .desktop-item{
     display: block;
   }
 
   nav ul{
     gap: 2em;
-  }
-  
-  #nav-btn{
-    display: none;
   }
 
   main > section{
@@ -428,15 +408,10 @@ footer a{
     font-size: 3rem;
   }
 
-  .stylers{
-    display: flex;
-    gap: 1em;
-  }
-
   .promo-section{
     padding-inline: 5rem;
     margin-inline: 16rem;
-    background-image: url(/assets/img/Promo-Banner-Image.jpg);
+    background-image: url(/assets/img/Promo-Banner-Image.webp);
   }
 
   .promo-section > h2,
