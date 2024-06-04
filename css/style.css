@@ -1,0 +1,401 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+body{
+  min-height: 100%;
+}
+
+.hidden{
+  display: none;
+}
+/******************************************
+/* BASE STYLES
+/*******************************************/
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h1,
+h2,
+h3,
+span {
+  text-transform: uppercase;
+}
+
+img {
+  max-width: 100%;
+}
+
+.section-title{
+  margin: 1em 0;
+  font-size: 3rem;
+  text-align: center;
+}
+
+
+.btn-primary{
+  padding: 1em;
+  background-color: black;
+  color: white;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+/******************************************
+/* LAYOUT
+/*******************************************/
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  color: white;
+  min-height: 72px;
+  padding: 1.5em;
+  text-transform: uppercase;
+}
+
+header > div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#nav-btn{
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+}
+
+nav ul{
+  padding: 3em 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+}
+
+header a{
+  color: white;
+}
+
+.nav-links{
+  cursor: pointer;
+}
+
+main{
+  padding: 72px 0;
+}
+
+main > section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main > section{
+  padding: 1.5em;
+}
+
+.main-section{
+  background-image: url(/assets/img/main.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-block: 4rem;
+}
+
+.main-section h1{
+  color: white;
+  line-height: 1.2em;
+  font-size: 2.5rem;
+}
+
+.no-wrap{
+  text-wrap: nowrap;
+}
+
+.services{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 2em;
+  text-align: center;
+}
+.services h3{
+  font-weight: bold;
+}
+
+.info-section{
+  padding-block: 3em;
+  gap: 3em;
+  background-color: #f3f4f6;
+}
+
+.info-section-text > *{
+  margin-bottom: 3rem;
+}
+
+.info-section-text h2{
+  font-size: 2.5rem;
+}
+
+.info-section p{
+  color: #737373;
+}
+
+.stylers-section{
+  text-align: center;
+  gap: 2em;
+  padding: 1e;
+}
+
+.styler > *{
+  margin-bottom: 1em
+}
+
+.promo-section{
+  background-color: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-block: 4rem;
+}
+
+.promo-section p{
+  font-size: 3.5rem;
+  padding-block: 0.5rem;
+}
+
+.lookbook{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.lookbook-col{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+
+.lookbook img{
+  width: 100%;
+}
+
+footer{
+  background-color: black;
+  color: white;
+  padding: 2em 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+}
+
+footer p{
+  text-align: center;
+  line-height: 1.5em;
+}
+
+.footer-links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+}
+
+footer a{
+  color: white;
+  margin-left: em;
+}  
+
+#btn-backtop{
+  border-radius: 100%;
+  border: 3px solid white;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.desktop-item{
+  display: none;
+}
+
+.main-section-promo{
+  margin-top: 3em;
+  padding: 2.5em 2em;
+  background-color: black;
+  color: white;
+  max-width: 300px;
+}
+
+.main-section-promo h3{
+  font-size: 1.3rem;
+  font-weight: normal;
+  margin-bottom: 1em
+}
+
+.main-section-promo p{
+  font-size: 1.3rem;
+  line-height: 2em;
+  margin-bottom: 1em
+}
+
+.main-section-promo a{
+
+  padding: 1em;
+  background-color: white;
+  color: black;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
+.hidden-nav{
+  display: none;
+}
+
+@media only screen and (min-width: 600px){
+  header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hidden-nav{
+    display: inline-block;
+  }
+  #nav-btn{
+    display: none;
+  }
+
+  nav ul{
+    flex-direction: row;
+    padding: 0;
+    gap: 0.5em;
+  }
+
+  .nav-links{
+    padding: 0;
+  }
+
+  main > section{
+    padding: 3rem 6rem;
+  }
+
+  .main-section h1{
+    width: 50%;
+  }
+
+  .services-section{
+    flex-direction: row;
+    gap: 3em;
+  }
+
+  .lookbook{
+    flex-direction: row;
+  }
+
+  .stylers{
+    display: flex;
+    gap: 1em;
+  }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+  header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .desktop-item{
+    display: block;
+  }
+
+  nav ul{
+    gap: 3em;
+  }
+  
+  #nav-btn{
+    display: none;
+  }
+
+  main > section{
+    padding: 7rem 16rem;
+  }
+
+  .main-section{
+    min-height: 950px;
+  }
+
+  .main-section h1{
+    font-size: 6rem;
+    width: 50%;
+  }
+
+  .services-section{
+    font-size: 1.2rem;
+  }
+  .info-section{
+    flex-direction: row;
+    padding-block: 6rem;
+  }
+
+  .info-section-text h2{
+    font-size: 3rem;
+  }
+
+  .info-section-text p{
+    font-size: 1.2rem;
+  }
+
+  .stylers{
+    display: flex;
+    gap: 1em;
+  }
+
+  .promo-section{
+    padding-inline: 5rem;
+    margin-inline: 16rem;
+    background-image: url(/assets/img/Promo-Banner-Image.jpg);
+  }
+
+  .promo-section > h2,
+  .promo-section > p{
+    width: 50%;
+  }
+
+  .lookbook{
+    flex-direction: row;
+  }
+
+  footer{
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
