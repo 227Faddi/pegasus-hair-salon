@@ -4,7 +4,15 @@ let navBar = document.querySelector('nav')
 
 navBtn.addEventListener('click', dropNav)
 function dropNav(){
-    navBar.classList.toggle('hidden-nav')
+    if(navBar.classList.contains('show-nav')){
+        navBar.style.animationName = 'hide'
+        setTimeout(() => {
+            navBar.classList.remove('show-nav')
+        }, 1000)
+    }else{
+        navBar.style.animationName = 'show'
+        navBar.classList.add('show-nav')
+    }
 }
 
 
