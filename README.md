@@ -2,7 +2,7 @@
 
 A fully responsive landing page made for an hair salon.
 
-![alt tag](assets/img/landing.webp)
+![alt tag](assets/img/preview.gif)
 
 ## How It's Made:
 
